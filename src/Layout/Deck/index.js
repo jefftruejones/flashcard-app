@@ -5,11 +5,11 @@ import { CardText, Trash, Plus, HouseFill } from "react-bootstrap-icons";
 
 function Deck({ setUpdated }) {
   const { deckId } = useParams();
-  // let deck = decks.find((deck) => deck.id == deckId);
+
   const history = useHistory();
   const [deleted, setDeleted] = useState(0);
   const [deck, setDeck] = useState({});
-  //const [cards, setCards] = useState([]);
+
   const { url } = useRouteMatch();
 
   console.log("deck url is", url);
@@ -29,13 +29,8 @@ function Deck({ setUpdated }) {
 
     return () => abortController.abort();
   }, [deleted]);
-  // console.log(deck.cards);
-
-  // console.log(deck);
 
   console.log("deck is ", deck);
-
-  //deck.cards.some((e) => /./.test(e))
 
   return (
     <>

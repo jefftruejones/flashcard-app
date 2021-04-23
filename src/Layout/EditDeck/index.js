@@ -2,7 +2,8 @@ import { Link, useHistory, useParams, useRouteMatch } from "react-router-dom";
 import { HouseFill } from "react-bootstrap-icons";
 import { useState, useEffect } from "react";
 import { updateDeck, readDeck } from "../../utils/api";
-function EditDeck({ setUpdated }) {
+import DeckForm from "../DeckForm";
+function EditDeck({ decks, setUpdated }) {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
   const history = useHistory();
@@ -10,7 +11,6 @@ function EditDeck({ setUpdated }) {
 
   console.log(deckId);
 
-  // const history = useHistory();
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -72,43 +72,12 @@ function EditDeck({ setUpdated }) {
         </ol>
       </nav>
       <h1>Edit Deck</h1>
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="DeckName"
-            placeholder={deck.name}
-            name="name"
-            value={deck.name}
-            onChange={handleChange}
-            aria-describedby="deckName"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="DeckDescription">Description</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            placeholder={deck.description}
-            name="description"
-            value={deck.description}
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <Link
-          to={`/decks/${deckId}`}
-          type="button"
-          className="btn btn-secondary"
-        >
-          Cancel
-        </Link>
-        <button type="submit" className="btn btn-primary m-1">
-          Submit
-        </button>
-      </form>
+      <DeckForm
+        decks={decks}
+        deck={deck}
+        handleChange={handleChange}
+        submitHandler={submitHandler}
+      />
     </>
   );
 }

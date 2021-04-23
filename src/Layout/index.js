@@ -48,7 +48,7 @@ function Layout() {
           </Route>
 
           <Route path={"/decks/:deckId/edit"}>
-            <EditDeck setUpdated={setUpdated} />
+            <EditDeck decks={decks} setUpdated={setUpdated} />
           </Route>
 
           <Route path={"/decks/new"}>

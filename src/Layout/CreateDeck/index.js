@@ -2,6 +2,7 @@ import { Link, useHistory, useRouteMatch } from "react-router-dom";
 import { HouseFill } from "react-bootstrap-icons";
 import { useState } from "react";
 import { createDeck } from "../../utils/api";
+import DeckForm from "../DeckForm";
 function CreateDeck({ decks, setUpdated }) {
   const { url } = useRouteMatch();
   const [deck, setDeck] = useState({ name: "", description: "" });
@@ -51,39 +52,12 @@ function CreateDeck({ decks, setUpdated }) {
         </ol>
       </nav>
       <h1>Create Deck</h1>
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="DeckName"
-            placeholder="Deck name"
-            name="name"
-            value={deck.name}
-            onChange={handleChange}
-            aria-describedby="deckName"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="DeckDescription">Description</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            placeholder="Brief decription of the deck"
-            name="description"
-            value={deck.description}
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <Link to={"/"} type="button" className="btn btn-secondary">
-          Cancel
-        </Link>
-        <button type="submit" className="btn btn-primary m-1">
-          Submit
-        </button>
-      </form>
+      <DeckForm
+        submitHandler={submitHandler}
+        handleChange={handleChange}
+        deck={deck}
+        decks={decks}
+      />
     </>
   );
 }

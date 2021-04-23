@@ -2,6 +2,7 @@ import { useParams, Link, useRouteMatch, useHistory } from "react-router-dom";
 import { HouseFill } from "react-bootstrap-icons";
 import { readDeck, updateCard, readCard } from "../../utils/api";
 import { useEffect, useState } from "react";
+import CardForm from "../CardForm";
 function EditCard({ setUpdated }) {
   const { deckId, cardId } = useParams();
   const [deck, setDeck] = useState([]);
@@ -88,42 +89,12 @@ function EditCard({ setUpdated }) {
         </ol>
       </nav>
       <h2>Edit Card {card.id}</h2>
-      <form onSubmit={submitHandler}>
-        <div className="form-group">
-          <label htmlFor="cardFront">Front</label>
-          <textarea
-            class="form-control"
-            id="cardFront"
-            rows="3"
-            placeholder={card.front}
-            name="front"
-            value={card.front}
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="DeckDescription">Back</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            placeholder={card.back}
-            name="back"
-            value={card.back}
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <Link
-          to={`/decks/${deck.id}`}
-          type="button"
-          className="btn btn-secondary"
-        >
-          Cancel
-        </Link>
-        <button type="submit" className="btn btn-primary m-1">
-          Save
-        </button>
-      </form>
+      <CardForm
+        handleChange={handleChange}
+        submitHandler={submitHandler}
+        card={card}
+        deck={deck}
+      />
     </>
   );
 }

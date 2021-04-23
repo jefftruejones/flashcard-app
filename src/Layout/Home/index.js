@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 
 function Home({ decks, setUpdated }) {
   const history = useHistory();
-  // const handleDelete = ;
 
   let deckRend = decks.map((deck, index) => (
     <div className="row m-1" key={index}>
