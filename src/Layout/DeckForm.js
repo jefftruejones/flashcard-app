@@ -19,7 +19,7 @@ function DeckForm({ submitHandler, deck, handleChange, decks }) {
         <div className="form-group">
           <label htmlFor="DeckDescription">Description</label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
             placeholder="Brief decription of the deck"

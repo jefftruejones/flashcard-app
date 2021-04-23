@@ -5,7 +5,7 @@ function CardForm({ submitHandler, handleChange, deck, card }) {
       <div className="form-group">
         <label htmlFor="cardFront">Front</label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="cardFront"
           rows="3"
           placeholder="This is where the term or question goes"
@@ -17,7 +17,7 @@ function CardForm({ submitHandler, handleChange, deck, card }) {
       <div className="form-group">
         <label htmlFor="DeckDescription">Back</label>
         <textarea
-          class="form-control"
+          className="form-control"
           id="exampleFormControlTextarea1"
           rows="3"
           placeholder="Place the answer or definition here"
