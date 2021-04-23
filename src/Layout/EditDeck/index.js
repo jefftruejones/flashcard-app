@@ -25,7 +25,7 @@ function EditDeck({ decks, setUpdated }) {
     getDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   const handleChange = ({ target }) => {
     setDeck({

@@ -30,7 +30,7 @@ function AddCard({ setUpdated }) {
     getDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   console.log("addcard rendered");
 

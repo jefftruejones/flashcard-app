@@ -28,7 +28,7 @@ function Deck({ setUpdated }) {
     getDeck();
 
     return () => abortController.abort();
-  }, [deleted]);
+  }, [deleted, deckId]);
 
   console.log("deck is ", deck);
 
@@ -83,7 +83,6 @@ function Deck({ setUpdated }) {
                     "Delete this deck? You will not be able to recover it!"
                   )
                 ) {
-                  const abortController = new AbortController();
                   try {
                     let result = deleteDeck(deck.id);
                     setUpdated(result);
@@ -127,7 +126,6 @@ function Deck({ setUpdated }) {
                           "Delete this card? You will not be able to recover it!"
                         )
                       ) {
-                        const abortController = new AbortController();
                         try {
                           let result = deleteCard(card.id);
                           setDeleted(result);

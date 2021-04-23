@@ -31,7 +31,7 @@ function EditCard({ setUpdated }) {
     getDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -47,7 +47,7 @@ function EditCard({ setUpdated }) {
     ReadCard();
 
     return () => abortController.abort();
-  }, []);
+  }, [cardId]);
 
   console.log("addcard rendered");
 

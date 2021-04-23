@@ -1,7 +1,6 @@
 import { Plus, EyeFill, Trash, CardText } from "react-bootstrap-icons";
 import { Link, useHistory } from "react-router-dom";
-import { deleteDeck, listDecks } from "../../utils/api";
-import { useState, useEffect } from "react";
+import { deleteDeck } from "../../utils/api";
 
 function Home({ decks, setUpdated }) {
   const history = useHistory();
@@ -40,7 +39,6 @@ function Home({ decks, setUpdated }) {
                     "Delete this deck? You will not be able to recover it!"
                   )
                 ) {
-                  const abortController = new AbortController();
                   try {
                     let result = deleteDeck(deck.id);
                     setUpdated(result);

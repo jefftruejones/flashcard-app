@@ -1,7 +1,7 @@
 import { useRouteMatch, Link, useParams, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { readDeck } from "../../utils/api";
-import { Plus, HouseFill, House } from "react-bootstrap-icons";
+import { Plus, HouseFill } from "react-bootstrap-icons";
 function Study() {
   const [deck, setDeck] = useState({ cards: [] });
   const [iterator, setIterator] = useState(0);
@@ -24,7 +24,7 @@ function Study() {
     LoadDeck();
 
     return () => abortContoller.abort();
-  }, []);
+  }, [deckId]);
 
   console.log("url = ", url);
 
