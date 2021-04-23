@@ -5,11 +5,9 @@ import { updateDeck, readDeck } from "../../utils/api";
 import DeckForm from "../DeckForm";
 function EditDeck({ decks, setUpdated }) {
   const { deckId } = useParams();
-  const [deck, setDeck] = useState({});
+  const [deck, setDeck] = useState({ name: "", description: "" });
   const history = useHistory();
   const { url } = useRouteMatch();
-
-  console.log(deckId);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -53,7 +51,7 @@ function EditDeck({ decks, setUpdated }) {
 
     history.push(`/decks/${deckId}`);
   };
-  console.log(deck);
+
   return (
     <>
       <h1>test</h1>

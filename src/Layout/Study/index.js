@@ -26,8 +26,6 @@ function Study() {
     return () => abortContoller.abort();
   }, [deckId]);
 
-  console.log("url = ", url);
-
   const clickHandler = () => {
     setFlipped((prev) => !prev);
   };
@@ -48,8 +46,6 @@ function Study() {
       }
     }
   };
-
-  console.log("deck is", deck);
 
   const cardsArray = deck.cards.map((card, index) => (
     <div className="card w-50" key={index}>

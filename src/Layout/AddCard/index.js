@@ -32,8 +32,6 @@ function AddCard({ setUpdated }) {
     return () => abortController.abort();
   }, [deckId]);
 
-  console.log("addcard rendered");
-
   const submitHandler = (event) => {
     event.preventDefault();
 

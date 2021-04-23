@@ -12,8 +12,6 @@ function Deck({ setUpdated }) {
 
   const { url } = useRouteMatch();
 
-  console.log("deck url is", url);
-
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -29,8 +27,6 @@ function Deck({ setUpdated }) {
 
     return () => abortController.abort();
   }, [deleted, deckId]);
-
-  console.log("deck is ", deck);
 
   return (
     <>
@@ -102,7 +98,7 @@ function Deck({ setUpdated }) {
       <h2>Cards</h2>
       {deck.cards
         ? deck.cards.map((card) => (
-            <div className="card">
+            <div className="card" key={card.id}>
               <div className="card-body">
                 <div className="d-flex">
                   {" "}
@@ -133,7 +129,7 @@ function Deck({ setUpdated }) {
                           throw error;
                         }
                       } else {
-                        console.log(history);
+                        // console.log("");
                       }
                     }}
                   >

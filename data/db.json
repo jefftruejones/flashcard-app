@@ -44,10 +44,16 @@
     },
     {
       "cards": [],
-      "front": "b",
-      "back": "b",
+      "front": "asdasdasdasdasdasdasdasd",
+      "back": "adasdasdasdasdasdasdasdasdasdasdasdasdasd",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "this is fun",
+      "back": "i love this",
+      "deckId": 1,
+      "id": 8
     }
   ]
 }

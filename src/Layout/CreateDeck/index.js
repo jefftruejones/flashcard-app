@@ -34,7 +34,7 @@ function CreateDeck({ decks, setUpdated }) {
 
     history.push(`/decks/${deckId}`);
   };
-  console.log(deck);
+
   return (
     <>
       <nav aria-label="breadcrumb">

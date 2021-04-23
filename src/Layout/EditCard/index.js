@@ -49,8 +49,6 @@ function EditCard({ setUpdated }) {
     return () => abortController.abort();
   }, [cardId]);
 
-  console.log("addcard rendered");
-
   const submitHandler = (event) => {
     event.preventDefault();
 
